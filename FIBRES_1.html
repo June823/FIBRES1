@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINTAGE FIBRES</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="logo.png" alt="VINTAGE FIBRES" class="logo">
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">&#127968;Home</a></li>
+                <li><a href="#about" onclick="showSection('about')">&#128214;About</a></li>
+                <li><a href="#services" onclick="showSection('services')">&#128100;Services</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">&#9742;Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hidden">
+            <h1>Welcome to Vintage Fibres</h1>
+            <p>Tranforming wastage to wealth.</p>
+        </section>
+        <section id="about" class="hidden">
+            <h1>About Us</h1>
+            <p>This is the about section.</p>
+        </section>
+        <section id="services" class="hidden">
+            <h1>Our Services</h1>
+            <p>This is the services section.</p>
+        </section>
+        <section id="contact" class="hidden">
+            <h1>Contact Us</h1>
+            <form action="https://www.example.com/submit-form" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Vintage Fibres. All rights reserved.</p>
+    </footer>
+    <script>
+       function showSection(sectionId) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        if (section.id === sectionId) {
+            section.classList.remove('hidden');
+            section.classList.add('zoom');
+        } else {
+            section.classList.add('hidden');
+            section.classList.remove('zoom');
+        }
+    });
+} 
+</script>
+</body>
+</html>
+<style>
+
+* {
+    margin: 2;
+    padding: 2;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: auto;
+   background-image: url('C:/Users/HP/OneDrive/Documents/ida1.jpg'); /* Ensure this path is correct */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+
+    color: blue;
+    padding: 1em 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 4em;
+}
+
+nav ul li a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo {
+    max-width: 700px;
+    height: auto;
+    font-family: script;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin: 2em 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for sections */
+    padding: 2em;
+    border-radius: 10px;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.zoom {
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+    color: yellow;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
